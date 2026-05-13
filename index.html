@@ -90,10 +90,10 @@
 
     .hero-inner {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
-      gap: 44px;
-      align-items: center;
-      padding: 72px 0 64px;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
+      gap: 34px;
+      align-items: start;
+      padding: 40px 0 38px;
     }
 
     .kicker {
@@ -119,7 +119,7 @@
     .hero-illustration {
       display: block;
       width: min(760px, 100%);
-      margin: 0 0 24px;
+      margin: 0 0 18px;
     }
 
     h1,
@@ -132,13 +132,13 @@
 
     h1 {
       max-width: 760px;
-      font-size: clamp(2.35rem, 5vw, 4.6rem);
+      font-size: clamp(2.15rem, 4.4vw, 4rem);
     }
 
     .lead {
       max-width: 720px;
-      margin: 22px 0 0;
-      font-size: 1.2rem;
+      margin: 16px 0 0;
+      font-size: 1.08rem;
       color: #2c3b42;
     }
 
@@ -146,12 +146,12 @@
       background: #fff;
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
-      padding: 28px;
+      padding: 22px;
     }
 
     .facts-panel h2 {
-      margin-bottom: 18px;
-      font-size: 1.35rem;
+      margin-bottom: 14px;
+      font-size: 1.2rem;
     }
 
     .fact-list {
@@ -183,7 +183,7 @@
     }
 
     section {
-      padding: 64px 0;
+      padding: 36px 0;
     }
 
     section + section {
@@ -192,12 +192,12 @@
 
     .section-head {
       max-width: 720px;
-      margin-bottom: 32px;
+      margin-bottom: 20px;
     }
 
     .section-head h2 {
-      font-size: clamp(1.8rem, 3vw, 2.55rem);
-      margin-bottom: 12px;
+      font-size: clamp(1.55rem, 2.4vw, 2.1rem);
+      margin-bottom: 8px;
     }
 
     .section-head p {
@@ -206,29 +206,15 @@
       font-size: 1.04rem;
     }
 
-    .columns {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 34px;
-    }
-
-    .text-block p {
-      margin: 0 0 16px;
-    }
-
-    .text-block p:last-child {
-      margin-bottom: 0;
-    }
-
     .activity-grid {
       display: grid;
       grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 14px;
+      gap: 10px;
     }
 
     .activity {
-      min-height: 170px;
-      padding: 20px;
+      min-height: 138px;
+      padding: 16px;
       border: 1px solid var(--line);
       background: #fff;
       border-left: 5px solid var(--teal);
@@ -251,38 +237,17 @@
     }
 
     .activity h3 {
-      margin-bottom: 10px;
-      font-size: 1.02rem;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      color: var(--muted);
     }
 
     .activity p {
       margin: 0;
-      color: var(--muted);
+      color: var(--ink);
       font-size: 0.95rem;
-    }
-
-    .outcomes {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .outcome {
-      padding: 20px;
-      border: 1px solid var(--line);
-      background: var(--soft);
-    }
-
-    .outcome strong {
-      display: block;
-      font-size: 1.85rem;
-      color: var(--teal);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .outcome span {
-      color: #33444b;
+      font-weight: 700;
+      line-height: 1.35;
     }
 
     .publicity {
@@ -292,16 +257,16 @@
     .publicity-box {
       display: grid;
       grid-template-columns: minmax(240px, 360px) minmax(0, 1fr);
-      gap: 36px;
+      gap: 28px;
       align-items: center;
       border: 1px solid var(--line);
       background: #fff;
-      padding: 32px;
+      padding: 24px;
     }
 
     .publicity-box h2 {
-      margin-bottom: 12px;
-      font-size: 1.8rem;
+      margin-bottom: 8px;
+      font-size: 1.45rem;
     }
 
     .publicity-box p {
@@ -333,13 +298,11 @@
 
     @media (max-width: 920px) {
       .hero-inner,
-      .columns,
       .publicity-box {
         grid-template-columns: 1fr;
       }
 
-      .activity-grid,
-      .outcomes {
+      .activity-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
@@ -360,7 +323,7 @@
 
       .hero-inner,
       section {
-        padding: 44px 0;
+        padding: 32px 0;
       }
 
       .facts-panel,
@@ -368,8 +331,7 @@
         padding: 22px;
       }
 
-      .activity-grid,
-      .outcomes {
+      .activity-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -393,7 +355,7 @@
           <div class="kicker">Podpora ohrožených dětí a rodin</div>
           <img class="hero-illustration" src="assets/mosty-v-rodine-ilustrace.png" alt="Ilustrace projektu Mosty v rodině">
           <h1 id="uvod">Mosty v rodině</h1>
-          <p class="lead">Projekt pomáhá ohroženým dětem a jejich rodinám v ORP Valašské Meziříčí zvládat náročné životní situace, posilovat rodičovské kompetence a předcházet odebrání dítěte z rodiny.</p>
+          <p class="lead">Projekt „Mosty v rodině“ je určen ohroženým dětem a jejich rodinám v ORP Valašské Meziříčí. Služba bude poskytována jako Sociálně aktivizační služba pro rodiny s dětmi (SAS RD) v terénní i ambulantní formě. Cílem je včasná a intenzivní podpora zaměřená na odstranění kořenových příčin ohrožení a prevenci odebrání dítěte z rodiny prostřednictvím multidisciplinárního týmu a koordinace podpory směrem k cílové skupině.</p>
         </div>
 
         <aside class="facts-panel" aria-labelledby="zakladni-udaje">
@@ -424,81 +386,32 @@
       </div>
     </section>
 
-    <section aria-labelledby="o-projektu">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 id="o-projektu">O projektu</h2>
-          <p>Služba je poskytována jako sociálně aktivizační služba pro rodiny s dětmi v terénní i ambulantní formě.</p>
-        </div>
-
-        <div class="columns">
-          <div class="text-block">
-            <p>Projekt reaguje na kumulované problémy rodin v nepříznivé sociální situaci: finanční stres, nestabilní bydlení, oslabené rodičovské kompetence, rodinné konflikty a obtížnou orientaci v systému podpory.</p>
-            <p>Podpora směřuje k včasnému řešení kořenových příčin ohrožení dítěte, nikoli pouze k řešení krizových projevů.</p>
-          </div>
-          <div class="text-block">
-            <p>Do pomoci je zapojen multidisciplinární tým zahrnující sociálního pracovníka, psychologa, mediátora, terapeuta, právníka, facilitátora, odborného garanta, vedoucího služby, case managera a peer konzultanta.</p>
-            <p>Důraz je kladen na koordinaci spolupráce mezi rodinou, OSPOD, školami a dalšími institucemi.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section aria-labelledby="cile">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 id="cile">Cíle projektu</h2>
-          <p>Hlavním cílem je komplexní pomoc rodinám v náročných životních situacích, zejména při rozvodu, rozchodu rodičů nebo rozpadu rodiny.</p>
-        </div>
-
-        <div class="outcomes" aria-label="Měřitelné cíle projektu">
-          <div class="outcome">
-            <strong>50 %</strong>
-            <span>klientů dosáhne obnovení nebo zlepšení komunikace mezi rodiči</span>
-          </div>
-          <div class="outcome">
-            <strong>25 %</strong>
-            <span>klientů zaznamená snížení počtu krizových a konfliktních situací</span>
-          </div>
-          <div class="outcome">
-            <strong>30 %</strong>
-            <span>klientů dosáhne konstruktivního řešení konfliktů v rodině</span>
-          </div>
-          <div class="outcome">
-            <strong>3</strong>
-            <span>pracovníci zvýší své odborné kompetence pro práci s cílovou skupinou</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section aria-labelledby="aktivity">
       <div class="wrap">
         <div class="section-head">
           <h2 id="aktivity">Klíčové aktivity</h2>
-          <p>Aktivity jsou zaměřené na přímou podporu rodin, profesionalizaci služby, vzdělávání, odbornou podporu pracovníků a vyhodnocování dopadů projektu.</p>
         </div>
 
         <div class="activity-grid">
           <article class="activity">
             <h3>KA1</h3>
-            <p>Poskytování sociálně aktivizační služby pro rodiny s dětmi.</p>
+            <p>Poskytování sociálně aktivizační služby pro rodiny s dětmi (SAS RD) podpora CS1</p>
           </article>
           <article class="activity">
             <h3>KA2</h3>
-            <p>Profesionalizace služeb, pracovních procesů, multidisciplinarita a case management.</p>
+            <p>Systémová podpora multidisciplinarity a Casemanagementu</p>
           </article>
           <article class="activity">
             <h3>KA3</h3>
-            <p>Svépomocné skupiny a vzdělávání pro posílení rodin i podpůrné sítě.</p>
+            <p>Činnosti nad rámec základních činností SAS - podpora CS1</p>
           </article>
           <article class="activity">
             <h3>KA4</h3>
-            <p>Podpora odborných pracovníků včetně vzdělávání a supervize.</p>
+            <p>Podpora odborných pracovníků (Vzdělávání a Supervize) - podpora CS2</p>
           </article>
           <article class="activity">
             <h3>KA5</h3>
-            <p>Evaluace průběhu, výsledků a přínosů projektu.</p>
+            <p>Evaluace</p>
           </article>
         </div>
       </div>
