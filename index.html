@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mosty v rodině | Projekt OPZ+</title>
+  <meta name="description" content="Informace o projektu Mosty v rodině, spolufinancovaném Evropskou unií z Operačního programu Zaměstnanost plus.">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172126;
+      --muted: #5a6870;
+      --line: #d9e1e5;
+      --paper: #ffffff;
+      --soft: #f4f8f7;
+      --blue: #244f85;
+      --teal: #0e7c7b;
+      --clay: #a75534;
+      --gold: #d29c2f;
+      --shadow: 0 18px 45px rgba(23, 33, 38, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: var(--blue);
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px 0;
+    }
+
+    .brand {
+      display: grid;
+      gap: 2px;
+    }
+
+    .brand strong {
+      font-size: 1rem;
+      letter-spacing: 0;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .eu-logo {
+      width: min(330px, 48vw);
+      display: block;
+    }
+
+    .hero {
+      background: var(--soft);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+      gap: 44px;
+      align-items: center;
+      padding: 72px 0 64px;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--teal);
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 34px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 999px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.18;
+      margin: 0;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(2.35rem, 5vw, 4.6rem);
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 22px 0 0;
+      font-size: 1.2rem;
+      color: #2c3b42;
+    }
+
+    .facts-panel {
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .facts-panel h2 {
+      margin-bottom: 18px;
+      font-size: 1.35rem;
+    }
+
+    .fact-list {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+    }
+
+    .fact-list div {
+      display: grid;
+      gap: 2px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .fact-list div:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .fact-list dt {
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .fact-list dd {
+      margin: 0;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 64px 0;
+    }
+
+    section + section {
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      max-width: 720px;
+      margin-bottom: 32px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.8rem, 3vw, 2.55rem);
+      margin-bottom: 12px;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 34px;
+    }
+
+    .text-block p {
+      margin: 0 0 16px;
+    }
+
+    .text-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .activity {
+      min-height: 170px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-left: 5px solid var(--teal);
+    }
+
+    .activity:nth-child(2) {
+      border-left-color: var(--blue);
+    }
+
+    .activity:nth-child(3) {
+      border-left-color: var(--clay);
+    }
+
+    .activity:nth-child(4) {
+      border-left-color: var(--gold);
+    }
+
+    .activity:nth-child(5) {
+      border-left-color: #496d3f;
+    }
+
+    .activity h3 {
+      margin-bottom: 10px;
+      font-size: 1.02rem;
+    }
+
+    .activity p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .outcomes {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .outcome {
+      padding: 20px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+    }
+
+    .outcome strong {
+      display: block;
+      font-size: 1.85rem;
+      color: var(--teal);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .outcome span {
+      color: #33444b;
+    }
+
+    .publicity {
+      background: #f7fafb;
+    }
+
+    .publicity-box {
+      display: grid;
+      grid-template-columns: minmax(240px, 360px) minmax(0, 1fr);
+      gap: 36px;
+      align-items: center;
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 32px;
+    }
+
+    .publicity-box h2 {
+      margin-bottom: 12px;
+      font-size: 1.8rem;
+    }
+
+    .publicity-box p {
+      margin: 0;
+      color: #33444b;
+    }
+
+    footer {
+      padding: 32px 0;
+      background: var(--ink);
+      color: #eef4f3;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-inner p {
+      margin: 0;
+    }
+
+    .footer-inner a {
+      color: #fff;
+    }
+
+    @media (max-width: 920px) {
+      .hero-inner,
+      .columns,
+      .publicity-box {
+        grid-template-columns: 1fr;
+      }
+
+      .activity-grid,
+      .outcomes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .eu-logo {
+        width: min(100%, 310px);
+      }
+
+      .hero-inner,
+      section {
+        padding: 44px 0;
+      }
+
+      .facts-panel,
+      .publicity-box {
+        padding: 22px;
+      }
+
+      .activity-grid,
+      .outcomes {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand" aria-label="Název projektu">
+        <strong>Mosty v rodině</strong>
+        <span>Projekt Operačního programu Zaměstnanost plus</span>
+      </div>
+      <img class="eu-logo" src="assets/eu-spolufinancovano-barevne.png" alt="Spolufinancováno Evropskou unií">
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="uvod">
+      <div class="wrap hero-inner">
+        <div>
+          <div class="kicker">Podpora ohrožených dětí a rodin</div>
+          <h1 id="uvod">Mosty v rodině</h1>
+          <p class="lead">Projekt pomáhá ohroženým dětem a jejich rodinám v ORP Valašské Meziříčí zvládat náročné životní situace, posilovat rodičovské kompetence a předcházet odebrání dítěte z rodiny.</p>
+        </div>
+
+        <aside class="facts-panel" aria-labelledby="zakladni-udaje">
+          <h2 id="zakladni-udaje">Základní údaje</h2>
+          <dl class="fact-list">
+            <div>
+              <dt>Registrační číslo projektu</dt>
+              <dd>CZ.03.02.02/00/25_104/0006461</dd>
+            </div>
+            <div>
+              <dt>Program</dt>
+              <dd>Operační program Zaměstnanost plus</dd>
+            </div>
+            <div>
+              <dt>Výzva</dt>
+              <dd>03_25_104</dd>
+            </div>
+            <div>
+              <dt>Realizace</dt>
+              <dd>1. 5. 2026 - 31. 8. 2028</dd>
+            </div>
+            <div>
+              <dt>Příjemce</dt>
+              <dd>Rodinné, komunitní a vzdělávací centrum Emcéčko, z.s.</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section aria-labelledby="o-projektu">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="o-projektu">O projektu</h2>
+          <p>Služba je poskytována jako sociálně aktivizační služba pro rodiny s dětmi v terénní i ambulantní formě.</p>
+        </div>
+
+        <div class="columns">
+          <div class="text-block">
+            <p>Projekt reaguje na kumulované problémy rodin v nepříznivé sociální situaci: finanční stres, nestabilní bydlení, oslabené rodičovské kompetence, rodinné konflikty a obtížnou orientaci v systému podpory.</p>
+            <p>Podpora směřuje k včasnému řešení kořenových příčin ohrožení dítěte, nikoli pouze k řešení krizových projevů.</p>
+          </div>
+          <div class="text-block">
+            <p>Do pomoci je zapojen multidisciplinární tým zahrnující sociálního pracovníka, psychologa, mediátora, terapeuta, právníka, facilitátora, odborného garanta, vedoucího služby, case managera a peer konzultanta.</p>
+            <p>Důraz je kladen na koordinaci spolupráce mezi rodinou, OSPOD, školami a dalšími institucemi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="cile">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="cile">Cíle projektu</h2>
+          <p>Hlavním cílem je komplexní pomoc rodinám v náročných životních situacích, zejména při rozvodu, rozchodu rodičů nebo rozpadu rodiny.</p>
+        </div>
+
+        <div class="outcomes" aria-label="Měřitelné cíle projektu">
+          <div class="outcome">
+            <strong>50 %</strong>
+            <span>klientů dosáhne obnovení nebo zlepšení komunikace mezi rodiči</span>
+          </div>
+          <div class="outcome">
+            <strong>25 %</strong>
+            <span>klientů zaznamená snížení počtu krizových a konfliktních situací</span>
+          </div>
+          <div class="outcome">
+            <strong>30 %</strong>
+            <span>klientů dosáhne konstruktivního řešení konfliktů v rodině</span>
+          </div>
+          <div class="outcome">
+            <strong>3</strong>
+            <span>pracovníci zvýší své odborné kompetence pro práci s cílovou skupinou</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="aktivity">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="aktivity">Klíčové aktivity</h2>
+          <p>Aktivity jsou zaměřené na přímou podporu rodin, profesionalizaci služby, vzdělávání, odbornou podporu pracovníků a vyhodnocování dopadů projektu.</p>
+        </div>
+
+        <div class="activity-grid">
+          <article class="activity">
+            <h3>KA1</h3>
+            <p>Poskytování sociálně aktivizační služby pro rodiny s dětmi.</p>
+          </article>
+          <article class="activity">
+            <h3>KA2</h3>
+            <p>Profesionalizace služeb, pracovních procesů, multidisciplinarita a case management.</p>
+          </article>
+          <article class="activity">
+            <h3>KA3</h3>
+            <p>Svépomocné skupiny a vzdělávání pro posílení rodin i podpůrné sítě.</p>
+          </article>
+          <article class="activity">
+            <h3>KA4</h3>
+            <p>Podpora odborných pracovníků včetně vzdělávání a supervize.</p>
+          </article>
+          <article class="activity">
+            <h3>KA5</h3>
+            <p>Evaluace průběhu, výsledků a přínosů projektu.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="publicity" aria-labelledby="publicita">
+      <div class="wrap">
+        <div class="publicity-box">
+          <img class="eu-logo" src="assets/eu-spolufinancovano-barevne.png" alt="Spolufinancováno Evropskou unií">
+          <div>
+            <h2 id="publicita">Povinná publicita</h2>
+            <p>Projekt „Mosty v rodině“, registrační číslo CZ.03.02.02/00/25_104/0006461, je spolufinancován Evropskou unií z Operačního programu Zaměstnanost plus. Informace na této stránce slouží k naplnění informační povinnosti příjemce vůči veřejnosti.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <p>Rodinné, komunitní a vzdělávací centrum Emcéčko, z.s.</p>
+      <p>J. K. Tyla 418, 757 01 Valašské Meziříčí</p>
+    </div>
+  </footer>
+</body>
+</html>
